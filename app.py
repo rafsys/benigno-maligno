@@ -18,6 +18,7 @@ st.set_page_config(
     layout="wide"
 )
 
+
 CSV_FILE = "data_cancer.csv"
 MODEL_FILE = "modelo_cancer.pkl"
 SCALER_FILE = "scaler_cancer.pkl"
@@ -66,6 +67,9 @@ if df is not None:
     modelo, scaler, X, y, X_test, y_test, y_pred, acc = cargar_o_entrenar_modelo(df)
 
     # BARRA LATERAL (Navegación)
+    st.sidebar.image("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.N6eUNMsWZJgzwYz22UlQyAHaEK%3Fpid%3DApi&f=1&ipt=bc5bacdc963f0897ff89e5b651c2de519d997ba09a6532d1fa42ad3766ff2165&ipo=images?auto=format&fit=crop&w=400&q=80",
+    caption="Clasificación de tumor", use_container_width=True,)
+    
     st.sidebar.title("📌 Menú de Navegación")
     opcion = st.sidebar.radio(
         "Seleccione una sección:",
